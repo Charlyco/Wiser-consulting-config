@@ -9,9 +9,9 @@ spring:
       ddl-auto: update
     show-sql: true
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/wellenceApiDb
-    username: wellence_dev
-    password: Ifeomimi2024
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/wiserDb
+    username: chukwuemeka_wiser
+    password: wiser2024
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   flyway:
