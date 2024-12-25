@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: auth-service
+
+  main:
+    allow-bean-definition-overriding: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/wiserDb
+    username: chukwuemeka_wiser
+    password: wiser2024
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  flyway:
+    enabled: false
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    schemas: public
+
+server:
+  port: 0
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+application:
+  security:
+    jwt:
+      secret-key: 1d51bb9ccf2dff371dc418794f08078d33cfd17880f78e833b8f605f5fa493cb325b62849c1015fa6e5eea450400f18319a067d61b94b37046add594504882d6
+      expiration: 3600000 # one day
+      refresh-token:
+        expiration: 604800000 # 7 days
