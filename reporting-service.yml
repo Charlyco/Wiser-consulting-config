@@ -1,6 +1,6 @@
 spring:
   application:
-    name: order-service
+    name: reporting-service
 
   main:
     allow-bean-definition-overriding: true
@@ -23,7 +23,7 @@ spring:
   kafka:
     bootstrap-servers: localhost:9092
     producer:
-      group-id: wellence_api
+      group-id: wiser_consulting
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
